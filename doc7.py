@@ -1,0 +1,23 @@
+import sqlite3
+con=sqlite3.connect('db1.db')
+c=con.cursor()
+
+#c.execute('create table student(regno text,name text)')
+c.execute("insert into student values('001','shilpa')")
+c.execute("insert into student values('002','ali')")
+c.execute("insert into student values('003','ram')")
+c.execute("insert into student values('004','sham')")
+con.commit()
+c.execute('select * from student')
+data=c.fetchall()
+print(data)
+print(data[0])
+print(data[1])
+print(data[2])
+print(data[3])
+#c.execute('update student set regno="100" where name="shilpa"
+c.execute('delete from student where regno="003')
+c.execute('select * from student')
+data1=c.fetchall()
+prime(data)c.close()
+con.close()
